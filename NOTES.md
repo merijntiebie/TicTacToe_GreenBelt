@@ -9,6 +9,21 @@ X|O|
 X| |O 
  
 PLAYER X WON! 
+
+Component: game class creation
+✅ new game -> players and board created
+
+Component: making a turn
+✅ - Player X plays on 0,0 -> board adjusted | current players is switched
+✅ - Player Y plays on 1,1 -> board adjusted | current players is switched
+
+Unit: changing a mark on the board
+✅ - Player X plays on 0,0
+✅ - Player O plays on 1,1
+
+Unit: changing the players turn
+✅ - current player is X, new current player is O
+✅ - current player is O, new current player is X
  
 2 – Player O won with a horizontal line 
 Player O: 

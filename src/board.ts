@@ -1,15 +1,15 @@
 export class Board {
-  private board: string[][];
+  state: string[][];
 
   constructor() {
-    this.board = [
+    this.state = [
       ["", "", ""],
       ["", "", ""],
       ["", "", ""],
     ];
   }
 
-  getBoardState(): string[][] {
-    return this.board;
+  setSymbol(row: number, column: number, symbol: string) {
+    this.state[row][column] = symbol;
   }
 }

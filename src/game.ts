@@ -17,7 +17,20 @@ export class Game {
     this.currentPlayer = this.playerX;
   }
 
-  getBoardState(): string[][] {
-    return this.board.getBoardState();
+  switchTurns() {
+    if (this.currentPlayer === this.playerX) {
+      this.currentPlayer = this.playerO;
+    } else {
+      this.currentPlayer = this.playerX;
+    }
+  }
+
+  setCurrentPlayer(player: Player) {
+    this.currentPlayer = player;
+  }
+
+  takeTurn(row: number, column: number) {
+    this.board.setSymbol(row, column, this.currentPlayer.symbol);
+    this.switchTurns();
   }
 }
