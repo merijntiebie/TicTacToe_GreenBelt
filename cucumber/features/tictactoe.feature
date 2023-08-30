@@ -1,6 +1,6 @@
 Feature: TicTacToe
 
-Scenario: Player 1 wins with a vertical win
+Scenario: Player X wins with a vertical win
 	Given a game of TicTacToe
 	And player X and player O compete for the win
 	And player X has placed its mark at 0,0
