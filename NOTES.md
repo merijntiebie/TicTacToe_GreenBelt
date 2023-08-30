@@ -1,6 +1,6 @@
 Kata
 
-1 – Player X won with a vertical line 
+🙌 1 – Player X won with a vertical line 
 Player X: 
 X| |  
 -+-+- 
