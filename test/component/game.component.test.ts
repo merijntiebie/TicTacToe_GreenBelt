@@ -1,8 +1,4 @@
 import { Game } from "../../src/game";
-import {
-  boardStateWithVerticalWinForX,
-  boardStateWithAlmostVerticalWinForX,
-} from "../doubles/board.state";
 
 describe("When a new game is created", () => {
   it("it should initialize players and board correctly", () => {

@@ -1,6 +1,6 @@
 Kata
 
-🙌 1 – Player X won with a vertical line 
+✅ 1 – Player X won with a vertical line 
 Player X: 
 X| |  
 -+-+- 
@@ -38,7 +38,7 @@ X|O|   --> No win ✅
 -+-+- 
  | |O 
  
-2 – Player O won with a horizontal line 
+🙌 2 – Player O won with a horizontal line 
 Player O: 
 X| |X  
 -+-+- 
@@ -47,6 +47,19 @@ O|O|O
 X| | 
  
 PLAYER O WON! 
+
+Unit: checking horizontal win
+X| |X
+-+-+-
+O|O|O --> Win ✅
+-+-+-
+X| | 
+
+X| |X
+-+-+-
+O|O| --> No win ✅
+-+-+-
+X| |O 
  
 3 – Player X won with a diagonal line 
 Player X: 

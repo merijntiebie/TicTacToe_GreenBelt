@@ -12,12 +12,15 @@ export class Game {
 
   lastMove: number[];
 
+  winner: Player | null;
+
   constructor() {
     this.playerX = new Player("X");
     this.playerO = new Player("O");
     this.board = new Board();
     this.currentPlayer = this.playerX;
     this.lastMove = [-1, -1];
+    this.winner = null;
   }
 
   switchTurns() {
@@ -36,13 +39,7 @@ export class Game {
     this.lastMove = [row, column];
   }
 
-  takeTurn(row: number, column: number) {
-    this.board.setSymbol(row, column, this.currentPlayer.symbol);
-    this.switchTurns();
-    this.lastMove = [row, column];
-  }
-
-  checkIfCurrentPlayerHasAVerticalWin() {
+  checkIfCurrentPlayerHasAVerticalWin(): boolean {
     const columnOfLastMove = this.lastMove[1];
     const symbolOfLastMove = this.currentPlayer.symbol;
 
@@ -53,5 +50,27 @@ export class Game {
       }
     }
     return verticalWin;
+  }
+
+  checkIfCurrentPlayerHasAHorizontalWin(): boolean {
+    const rowOfLastMove = this.lastMove[0];
+    const extractedRow = this.board.state[rowOfLastMove];
+    const symbolOfLastMove = this.currentPlayer.symbol;
+    if (extractedRow?.some((symbol) => symbol !== symbolOfLastMove)) {
+      return false;
+    }
+    return true;
+  }
+
+  takeTurn(row: number, column: number) {
+    this.board.setSymbol(row, column, this.currentPlayer.symbol);
+    this.lastMove = [row, column];
+    if (this.checkIfCurrentPlayerHasAVerticalWin() === true) {
+      this.winner = this.currentPlayer;
+    }
+    if (this.checkIfCurrentPlayerHasAHorizontalWin() === true) {
+      this.winner = this.currentPlayer;
+    }
+    this.switchTurns();
   }
 }
