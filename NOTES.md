@@ -24,6 +24,19 @@ Unit: changing a mark on the board
 Unit: changing the players turn
 ✅ - current player is X, new current player is O
 ✅ - current player is O, new current player is X
+
+Unit: checking vertical win
+X| |  
+-+-+- 
+X|O|   --> Win ✅
+-+-+- 
+X| |O 
+
+X| |  
+-+-+- 
+X|O|   --> No win ✅
+-+-+- 
+ | |O 
  
 2 – Player O won with a horizontal line 
 Player O: 
